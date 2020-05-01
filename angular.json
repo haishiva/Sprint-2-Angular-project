@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "UserRegistrationAngular"
+    }
+  },
+  "defaultProject": "UserRegistrationAngular",
+  "cli": {
+    "analytics": "77ca38d1-5df9-4557-a5d1-fc6bdccf72cb"
+  }
 }
