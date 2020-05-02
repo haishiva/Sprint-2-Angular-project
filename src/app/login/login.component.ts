@@ -22,9 +22,6 @@ output: String;
 private location: Location;
   ngOnInit(): void {
 
-    
-  
-
 
   }
   
@@ -39,6 +36,7 @@ private location: Location;
     if (this.message=="Optional.empty") {
       this.output="UserId or Password are Incorrect"
     } else {
+      this.myservice.isLoggedIn=true;
       this.output="Logged in Succesfully";
       this.router.navigate(['/newpage']);
     }

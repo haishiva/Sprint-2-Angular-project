@@ -15,12 +15,8 @@ output: String;
   }
 logout()
 {
-  if (this.myservice.isLoggedIn==false) {
-    this.output="User does not logged in to the account"
-  } else {
-    this.output="Logout Succesfully";
+    
     this.myservice.isLoggedIn=false;
     this.router.navigate(['/login']);
-  }
 }
 }

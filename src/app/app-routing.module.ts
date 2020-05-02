@@ -6,6 +6,7 @@ import { RecoveryComponent } from './recovery/recovery.component';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { NewpageComponent } from './newpage/newpage.component';
+import { MyserviceService } from './myservice.service';
 
 
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
 {path:"recovery",component:RecoveryComponent},
 {path:"logout",component:LoginComponent},
 {path:"home",component:HomepageComponent},
-{path:"newpage",component:NewpageComponent},
+{path:"newpage",component:NewpageComponent, canActivate:[MyserviceService]},
 ];
 
 @NgModule({

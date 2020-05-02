@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -7,8 +8,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class MyserviceService {
  user: User;
  isLoggedIn: boolean=false;
-  constructor(private httpService: HttpClient) { }
-
+  constructor(private httpService: HttpClient,private router: Router) { }
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    if (this.isLoggedIn) {
+      return true;
+    } else {
+      alert('Please log in')
+      this.router.navigate(['']);
+      return false;
+    }
+  }
 
   public addUser(adduser: User) {
     console.log("ins service add");
